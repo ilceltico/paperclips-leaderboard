@@ -38,15 +38,19 @@ def connect_mqtt():
 def publish(client, driver):
     while True:
         time.sleep(2)
-        clips = int(driver.find_element(By.ID, "clips").text.replace(',', ''))
-        msg = f"{user},{clips}"
-        result = client.publish(topic, msg)
-        # result: [0, 1]
-        status = result[0]
-        if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
-        else:
-            print(f"Failed to send message to topic {topic}")
+        try:
+            clips = int(driver.find_element(By.ID, "clips").text.replace(',', ''))
+            msg = f"{user},{clips}"
+            result = client.publish(topic, msg)
+            # result: [0, 1]
+            status = result[0]
+            if status == 0:
+                print(f"Send `{msg}` to topic `{topic}`")
+            else:
+                print(f"Failed to send message to topic {topic}")
+        except:
+            print(f"Failed to retrieve information from the browser session, you might want to restart this script.")
+
 
 
 def run():
