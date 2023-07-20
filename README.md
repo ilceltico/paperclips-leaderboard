@@ -50,6 +50,8 @@ Pre-requisites
 
 ### Leadeboard and players
 
+Make sure to have Chrome installed and updated
+
 1. Install Python, with or without Conda
 
 2. Install Selenium
