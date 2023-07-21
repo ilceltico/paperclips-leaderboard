@@ -54,9 +54,11 @@ Make sure to have Chrome installed and updated
 
 1. Install Python, with or without Conda
 
-2. Install Selenium
+2. Install Selenium 4
 
    `pip install selenium`
+
+   Note: Conda installs Selenium 3, so make sure to install Selenium 4 with Pip
 
 3. Install the Python MQTT client
 
